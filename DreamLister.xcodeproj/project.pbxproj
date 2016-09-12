@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112211B01D86F741008D049F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112211AF1D86F741008D049F /* CustomTextField.swift */; };
 		11D8A6CC1D82CDAA007F0432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A6CB1D82CDAA007F0432 /* AppDelegate.swift */; };
 		11D8A6CE1D82CDAA007F0432 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D8A6CD1D82CDAA007F0432 /* MainVC.swift */; };
 		11D8A6D11D82CDAA007F0432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D8A6CF1D82CDAA007F0432 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112211AF1D86F741008D049F /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = "../../../../Documents/DevSlopes/iOS10/DreamLister Assets/CustomTextField.swift"; sourceTree = "<group>"; };
 		11D8A6C81D82CDAA007F0432 /* DreamLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D8A6CB1D82CDAA007F0432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D8A6CD1D82CDAA007F0432 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 				11DB98E41D86BBF700BA943A /* View */,
 				11D8A6F01D82FEFF007F0432 /* Model */,
 				11D8A6CB1D82CDAA007F0432 /* AppDelegate.swift */,
-				11D8A6CD1D82CDAA007F0432 /* MainVC.swift */,
 				11D8A6CF1D82CDAA007F0432 /* Main.storyboard */,
 				11D8A6D51D82CDAA007F0432 /* Assets.xcassets */,
 				11D8A6D71D82CDAA007F0432 /* LaunchScreen.storyboard */,
@@ -118,6 +119,7 @@
 		11DB98E41D86BBF700BA943A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				112211AF1D86F741008D049F /* CustomTextField.swift */,
 				11DB98E51D86BC0900BA943A /* MaterialView.swift */,
 				11DB98E71D86BE3500BA943A /* ItemCell.swift */,
 			);
@@ -127,6 +129,7 @@
 		11DB98E91D86F2FA00BA943A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				11D8A6CD1D82CDAA007F0432 /* MainVC.swift */,
 				11DB98EA1D86F31D00BA943A /* ItemDetailsVC.swift */,
 			);
 			name = Controller;
@@ -219,6 +222,7 @@
 				11D8A6EB1D82FEF9007F0432 /* ItemType+CoreDataProperties.swift in Sources */,
 				11D8A6EF1D82FEF9007F0432 /* Item+CoreDataProperties.swift in Sources */,
 				11D8A6D41D82CDAA007F0432 /* DreamLister.xcdatamodeld in Sources */,
+				112211B01D86F741008D049F /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
