@@ -33,7 +33,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ynU-uA-qCc">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="Ry0-ei-F1N" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="Ry0-ei-F1N" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ry0-ei-F1N" id="4l2-Ij-CTp">
@@ -86,7 +86,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="GUq-Aa-mnz" secondAttribute="bottom" constant="8" id="sdX-H6-eRx"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -98,6 +98,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="m0T-I7-ctM" secondAttribute="trailing" id="h1H-be-QzI"/>
                                                 <constraint firstItem="m0T-I7-ctM" firstAttribute="top" secondItem="4l2-Ij-CTp" secondAttribute="topMargin" id="obW-EO-9Hn"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -151,7 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-7U-m8x">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-7U-m8x">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0RN-1Y-eCy"/>
                                     <constraint firstAttribute="width" constant="100" id="QZv-yC-QSr"/>
@@ -162,6 +165,9 @@
                                     <constraint firstAttribute="height" constant="100" id="37y-5W-Lri"/>
                                     <constraint firstAttribute="width" constant="100" id="zcp-Z9-0Nb"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="SD3-yP-njh" eventType="touchUpInside" id="5tj-Qi-IL4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0x-uB-5Nw" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.95088141025641026" green="0.95088141025641026" blue="0.95088141025641026" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,6 +208,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="xoV-Xv-vo7"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNY-ux-4aW">
                                 <color key="backgroundColor" red="0.33814102564102566" green="0.33814102564102566" blue="0.33814102564102566" alpha="1" colorSpace="calibratedRGB"/>
@@ -213,6 +222,9 @@
                                     <color key="titleColor" red="0.82702323717948723" green="0.82702323717948723" blue="0.82702323717948723" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.33814102564102566" green="0.33814102564102566" blue="0.33814102564102566" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="SD3-yP-njh" eventType="touchUpInside" id="O67-Fq-VO8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -244,8 +256,18 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="UOH-1v-LdX">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="F7l-lT-368">
                             <color key="tintColor" red="1" green="0.093322322275342873" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="SD3-yP-njh" id="jCt-po-mgj"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="Rwt-tz-Ats" id="BgT-Iz-BqI"/>
+                        <outlet property="priceField" destination="FGy-c4-OAm" id="Dc1-et-2E0"/>
+                        <outlet property="storePicker" destination="KO7-Uq-ugu" id="siP-fd-zqB"/>
+                        <outlet property="thumbImg" destination="Qhz-7U-m8x" id="xjO-Sc-U9f"/>
+                        <outlet property="titleField" destination="M0x-uB-5Nw" id="VMS-bW-tdK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMS-ze-3yD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,7 +278,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6fZ-2p-vKi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oGG-CR-jXM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oGG-CR-jXM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.38888221153846159" green="0.3791800448480051" blue="0.37407822743070418" alpha="1" colorSpace="calibratedRGB"/>
